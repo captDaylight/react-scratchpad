@@ -8,7 +8,7 @@ var gulp = require('gulp'),
 	browserify = require('browserify');
 
 gulp.task('browserify', ['clean'], function () {
-  browserify('./src/js/app.jsx')
+  browserify('./src/js/app.js')
     .transform(reactify)
     .bundle()
     .pipe(source('bundle.js'))
@@ -28,7 +28,7 @@ gulp.task('clean', function() {
 
 // Rerun tasks whenever a file changes.
 gulp.task('watch', function() {
-  gulp.watch('./src/js/app.jsx', ['browserify']);
+  gulp.watch('./src/js/*.js', ['browserify']);
 });
  
 gulp.task('default', ['watch', 'browserify', 'connect']);
