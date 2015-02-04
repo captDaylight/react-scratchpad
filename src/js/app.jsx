@@ -1,3 +1,7 @@
 var React = require('react');
-console.log('HELLOHELLO');
-React.renderComponent('<h1>hello</h1>', document.getElementById());
+// var myComponent = require('myComponent');
+console.log('hellohello');
+React.render(
+	<h1>Hello, world!</h1>,
+	document.getElementById('mount-point')
+);
